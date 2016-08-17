@@ -16,7 +16,7 @@
       vm_memory: 512
       state: deployed
       template_name: 'Template-CentOS6.8-x64'
-      catalog_name: 'Public catalog'
+      catalog_name: AOS-global01
       service_type: vcd
       vdc_name: 'OvDC-AteaStockholm6'
       org: "{{ org }}"
