@@ -19,6 +19,7 @@
     vsphere_guest:
       guest: "{{vm_name}}"
       state: reconfigured
+      force: true
       vm_extra_config:
         notes: This is a test VM
       vm_hardware:

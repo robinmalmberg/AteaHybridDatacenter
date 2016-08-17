@@ -15,7 +15,7 @@
       service_type: vcd
       vdc_name: OvDC-AOS01
       org: "{{ org }}"
-      username: "{{ VMWARE_USER }}@{{ org }}"
+      username: "{{ VMWARE_USER }}"
       password: "{{ VMWARE_PASSWORD }}"
       host: "https://{{ VMWARE_HOST }}"
       api_version: '5.6'
