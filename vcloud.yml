@@ -16,4 +16,4 @@
       org: ateastockholm6
       username: '{{ VMWARE_USER }}'
       password: '{{ VMWARE_PASSWORD }}'
-      host: 'https://{{ VMWARE_HOST }}'
+      host: 'https://manage2.myatea.net/cloud/org/ateastockholm6'
