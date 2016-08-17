@@ -11,6 +11,16 @@
       resource_pool: "/Resources"
       vm_extra_config:
         folder: ansible
+        vcpu.hotadd: yes
+        mem.hotadd:  yes
+        notes: This is a test VM
+        
+  - name: Reconfigure VMware VM
+    vsphere_guest:
+      guest: "{{vm_name}}"
+      state: reconfigured
       vm_hardware:
         memory_mb: "{{vm_memory}}"
         num_cpus: "{{vm_cpus}}"
+        osid: centos64Guest
+        scsi: paravirtual
