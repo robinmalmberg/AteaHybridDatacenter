@@ -17,4 +17,5 @@
       org: "{{ org }}"
       username: "{{ VMWARE_USER }}@{{ org }}"
       password: "{{ VMWARE_PASSWORD }}"
-      host: "http://{{ VMWARE_HOST }}"
+      host: "https://{{ VMWARE_HOST }}"
+      api_version: '5.6'
