@@ -14,7 +14,7 @@
       vm_name: towervm
       vm_cpus: 1
       vm_memory: 512
-      state: deploy
+      state: deployed
       template_name: 'Template-CentOS6.8-x64'
       catalog_name: 'Public catalog'
       service_type: vcd
