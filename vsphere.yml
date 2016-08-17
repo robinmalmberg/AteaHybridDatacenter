@@ -7,7 +7,7 @@
       guest: newvm001
       from_template: yes
       template_src: win2012R2-template
-      cluster: INTELCluster
+      cluster: INTELcluster
       resource_pool: "/Resources"
       vm_extra_config:
         folder: ansible
