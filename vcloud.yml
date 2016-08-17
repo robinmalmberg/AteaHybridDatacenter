@@ -13,7 +13,7 @@
       template_name: Template-CentOS6.8-x64
       catalog_name: AOS-global01
       service_type: vcd
-      api_version: '5.5'
+      api_version: '5.6'
       vdc_name: OvDC-AOS01
       org: "{{ org }}"
       username: "{{ VMWARE_USER }}@{{ org }}"
