@@ -16,6 +16,6 @@
       api_version: '5.5'
       vdc_name: OvDC-AOS01
       org: AteaStockholm6
-      username: '{{ VMWARE_USER }}@demosthlm02.local'
+      username: '{{ VMWARE_USER }}@AteaStockholm6'
       password: '{{ VMWARE_PASSWORD }}'
       host: 'manage2.myatea.net'
