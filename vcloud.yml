@@ -2,6 +2,10 @@
 - hosts: localhost
   connection: local
   tasks: 
+  - name: VMWARE_USER
+    debug: var=VMWARE_USER verbosity=4
+  - name: Display all variables/facts known for a host
+    debug: var=hostvars['localhost'] verbosity=4
   - name: Create vCloud vApp
     vca_vapp:
       vapp_name: tower
