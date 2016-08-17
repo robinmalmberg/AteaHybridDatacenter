@@ -4,8 +4,10 @@
   tasks: 
   - name: VMWARE_USER
     debug: var=VMWARE_USER
+
   - name: Display all variables/facts known for a host
     debug: var=hostvars['localhost']
+
   - name: Create vCloud vApp
     vca_vapp:
       vapp_name: tower
@@ -19,3 +21,6 @@
       password: "{{ VMWARE_PASSWORD }}"
       host: "https://{{ VMWARE_HOST }}"
       api_version: '5.6'
+    register: myvm
+
+  - debug: var=myvm
