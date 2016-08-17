@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  tasks: 
+  - name: Create vCloud vApp
+- name: Creates a new vApp in a VCA instance
+  vca_vapp:
+    vapp_name: tower
+    state=present
+    template_name='Template-CentOS6.8-x64'
+    vdc_name=OvDC-AOS01
+    org=AteaStockholm6
