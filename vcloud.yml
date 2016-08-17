@@ -10,12 +10,15 @@
 
   - name: Create vCloud vApp
     vca_vapp:
-      vapp_name: tower
-      state: present
-      template_name: Template-CentOS6.8-x64
-      catalog_name: "Public catalog"
+      vapp_name: towerapp
+      vm_name: towervm
+      vm_cpus: 1
+      vm_memory: 512
+      state: deploy
+      template_name: 'Template-CentOS6.8-x64'
+      catalog_name: 'Public catalog'
       service_type: vcd
-      vdc_name: OvDC-AOS01
+      vdc_name: 'OvDC-AteaStockholm6'
       org: "{{ org }}"
       username: "{{ VMWARE_USER }}"
       password: "{{ VMWARE_PASSWORD }}"
