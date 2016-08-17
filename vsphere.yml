@@ -11,7 +11,8 @@
       resource_pool: "/Resources"
       vm_extra_config:
         folder: ansible
-        
+        vcpu.hotadd: yes
+        mem.hotadd:  yes
         
         
   - name: Reconfigure VMware VM
@@ -19,8 +20,6 @@
       guest: "{{vm_name}}"
       state: reconfigured
       vm_extra_config:
-        vcpu.hotadd: yes
-        mem.hotadd:  yes
         notes: This is a test VM
       vm_hardware:
         memory_mb: "{{vm_memory}}"
