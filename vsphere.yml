@@ -4,10 +4,13 @@
   tasks: 
   - name: Create VMware VM
     vsphere_guest:
-      guest: newvm001
+      guest: "{{vm_name}}"
       from_template: yes
       template_src: win2012R2-template
       cluster: INTELcluster
       resource_pool: "/Resources"
       vm_extra_config:
         folder: ansible
+      vm_hardware:
+        memory_mb: "{{vm_memory}}"
+        num_cpus: "{{vm_cpus}}"
