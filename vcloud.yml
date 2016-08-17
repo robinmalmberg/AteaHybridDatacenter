@@ -11,10 +11,11 @@
       vapp_name: tower
       state: present
       template_name: Template-CentOS6.8-x64
+      catalog_name: AOS-global01
       service_type: vcd
       api_version: '5.5'
       vdc_name: OvDC-AOS01
       org: AteaStockholm6
-      username: '{{ VMWARE_USER }}'
+      username: '{{ VMWARE_USER }}@demosthlm02.local'
       password: '{{ VMWARE_PASSWORD }}'
       host: 'manage2.myatea.net'
