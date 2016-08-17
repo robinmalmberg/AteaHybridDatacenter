@@ -9,6 +9,6 @@
       template_name: Template-CentOS6.8-x64
       vdc_name: OvDC-AOS01
       org: AteaStockholm6
-      username: {{ VMWARE_USER }}
-      password: {{ VMWARE_PASSWORD }}
-      host: {{ VMWARE_HOST }}
+      username: '{{ VMWARE_USER }}'
+      password: '{{ VMWARE_PASSWORD }}'
+      host: '{{ VMWARE_HOST }}'
