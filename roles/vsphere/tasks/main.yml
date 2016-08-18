@@ -39,12 +39,15 @@
     password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     hostname: "{{ lookup('env','VMWARE_HOST')     }}"
   register: VMs
-  until: "'{{vm_name}}' in {{VMs.virtual_machines}}"
+  until: VMs.virtual_machines.{{vm_name}} is defined and VMs.virtual_machines.{{vm_name}}.ip_address
   retries: 10
   delay: 30
+- debug: var=VMs
 
 - name: Register Host in Ansible Inventory
-  add_host: 
+  add_host:
     name: "{{vm_name}}"
     groups: vmware_vm
-    ansible_ssh_host: "{{ VMs.virtual_machines.{{vm_name}}.ip_address }}"
+    ansible_ssh_host: "{{ item.ip_address }}"
+  with_items:
+  - "{{ VMs.virtual_machines[vm_name] }}"
