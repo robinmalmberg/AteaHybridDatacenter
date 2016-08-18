@@ -25,14 +25,17 @@
       osid: centos64Guest
       scsi: paravirtual
 
+- name: show vmware_vm_facts
+  vmware_vm_facts:
+  register: showVMs
+- debug: var=showVMs
+
 - name: get all vmware_vm_facts
   vmware_vm_facts:
   register: VMs
   until: "'{{vm_name}}' in {{VMs.virtual_machines}}"
   retries: 10
   delay: 30
-
-- debug: var=VMs
 
 - name: Register Host in Ansible Inventory
   add_host: 
