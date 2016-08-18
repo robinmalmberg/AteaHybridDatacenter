@@ -27,7 +27,7 @@
 
 - name: show vmware_vm_facts
   vmware_vm_facts:
-    username: "{{ VMWARE_USER }}"
+    username: "{{ os.environ.get('VMWARE_USER') }}"
     password: "{{ VMWARE_PASSWORD }}"
     hostname: "{{ VMWARE_HOST }}"
   register: showVMs
