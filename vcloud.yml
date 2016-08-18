@@ -14,7 +14,7 @@
       service_type: vcd
       vdc_name: 'OvDC-AteaStockholm6'
       org: "{{ org }}"
-      username: "{{ VMWARE_USER }}"
-      password: "{{ VMWARE_PASSWORD }}"
-      host: "https://{{ VMWARE_HOST }}"
+      username: "{{ lookup('env','VMWARE_USER')     }}"
+      password: "{{ lookup('env','VMWARE_PASSWORD') }}"
+      host: "{{ lookup('env','VMWARE_HOST')     }}"
       api_version: '5.6'
