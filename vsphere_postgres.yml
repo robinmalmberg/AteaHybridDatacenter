@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  roles: 
+    - vsphere
+
+- hosts: "{{vm_name}}"
+  roles: 
+    - postgresql94-server
