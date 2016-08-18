@@ -6,4 +6,5 @@
 
 - hosts: "{{vm_name}}"
   roles: 
+    - linux
     - mcenirm.postgresql94-server
