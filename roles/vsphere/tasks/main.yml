@@ -24,3 +24,18 @@
       num_cpus: "{{vm_cpus}}"
       osid: centos64Guest
       scsi: paravirtual
+
+- name: get all vmware_vm_facts
+  vmware_vm_facts:
+  register: VMs
+  until: "'{{vm_name}}' in {{VMs.virtual_machines}}"
+  retries: 10
+  delay: 30
+
+- debug: var=VMs
+
+- name: Register Host in Ansible Inventory
+  add_host: 
+    name: "{{vm_name}}"
+    groups: vmware_vm
+    ansible_ssh_host: "{{ VMs.virtual_machines.{{vm_name}}.ip_address }}"
