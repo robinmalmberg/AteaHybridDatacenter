@@ -3,7 +3,7 @@
   vsphere_guest:
     guest: "{{vm_name}}"
     from_template: yes
-    template_src: win2012R2-template
+    template_src: rhel7-template
     cluster: INTELcluster
     resource_pool: "/Resources"
     vm_extra_config:
