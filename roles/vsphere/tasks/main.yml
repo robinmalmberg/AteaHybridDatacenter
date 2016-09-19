@@ -5,7 +5,7 @@
     from_template: yes
     template_src: RHEL7-template
     cluster: HC-CLUS
-    resource_pool: "/Resources"
+    resource_pool: ""
     vm_extra_config:
       folder: ansible
       vcpu.hotadd: yes
