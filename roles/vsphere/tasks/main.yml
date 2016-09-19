@@ -3,8 +3,8 @@
   vsphere_guest:
     guest: "{{vm_name}}"
     from_template: yes
-    template_src: rhel7-template
-    cluster: INTELcluster
+    template_src: RHEL7-template
+    cluster: HC-CLUS
     resource_pool: "/Resources"
     vm_extra_config:
       folder: ansible
