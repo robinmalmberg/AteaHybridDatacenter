@@ -4,8 +4,8 @@
     guest: "{{vm_name}}"
     from_template: yes
     template_src: RHEL7-template
-    cluster: HC-DC 
-    resource_pool: "/Resources"
+    cluster: HC-CLUS
+    resource_pool: "Default for Cluster/Deployment Role HC-CLUS"
     vm_extra_config:
       folder: ansible
       vcpu.hotadd: yes
