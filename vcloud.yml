@@ -6,5 +6,4 @@
 
 - hosts: "{{vm_name}}"
   roles: 
-    - "{{ansible_os_family}}"
     - "{{tag_1_role}}"
