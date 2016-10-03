@@ -6,4 +6,4 @@
 
 - hosts: "{{vm_name}}"
   roles: 
-    - "{{tag_1_role}}"
+    - "{{role}}"

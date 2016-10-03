@@ -1,6 +1,6 @@
 ---
-option_1_vm_memory: 1024
-option_1_cores_per_socket: 1
+vm_memory: 1024
+vm_cpus: 1
 template_name: "Template-CentOS6.8-x64"
 catalog_name: "AOS-global01"
 vdc_name: 'OvDC-AteaStockholm6'
