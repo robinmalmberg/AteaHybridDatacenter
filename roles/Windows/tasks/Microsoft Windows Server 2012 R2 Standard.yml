@@ -1,0 +1,5 @@
+---
+- name: subscribe to Red Hats Enterprise Linux Server
+  user: 
+    name: Administrator
+    password: bla

@@ -3,3 +3,8 @@
   connection: local
   roles: 
     - vsphere
+
+- hosts: "{{vm_name}}"
+  roles: 
+    - "{{tag_1_os}}"
+    - "{{tag_1_role}}"

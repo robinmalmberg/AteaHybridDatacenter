@@ -1,0 +1,31 @@
+---
+- name: Create vCloud vApp
+  vca_vapp:
+    vapp_name: "{{vm_name}}"
+    vm_name: "{{vm_name}}"
+    vm_cpus: "{{option_1_cores_per_socket}}"
+    vm_memory: "{{option_1_vm_memory}}"
+    network_name: "{{options_1_vlan}}"
+    state: deployed
+    template_name: "{{template_name}}" #'Template-CentOS6.8-x64'
+    catalog_name: AOS-global01
+    service_type: vcd
+    vdc_name: 'OvDC-AteaStockholm6'
+    org: "{{ org }}"
+    username: "{{ lookup('env','VMWARE_USER')     }}"
+    password: "{{ lookup('env','VMWARE_PASSWORD') }}"
+    host: "{{ lookup('env','VMWARE_HOST')     }}"
+    api_version: '5.6'
+  with_sequence: start=1 end="{{options_1_number_of_vms}}" stride=1
+  register: VM
+  retries: 10
+  delay: 30
+- debug: var=VM
+
+- name: Register Host in Ansible Inventory
+  add_host:
+    name: "{{vm_name}}"
+    groups: vcloud_vm
+    ansible_ssh_host: "{{ item.ip_address }}"
+  with_items:
+  - "{{ VM }}"

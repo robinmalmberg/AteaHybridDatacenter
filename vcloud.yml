@@ -1,20 +1,10 @@
 ---
 - hosts: localhost
   connection: local
-  tasks: 
-  - name: Create vCloud vApp
-    vca_vapp:
-      vapp_name: towerapp
-      vm_name: "{{vm_name}}"
-      vm_cpus: 1
-      vm_memory: 512
-      state: deployed
-      template_name: 'Template-CentOS6.8-x64'
-      catalog_name: AOS-global01
-      service_type: vcd
-      vdc_name: 'OvDC-AteaStockholm6'
-      org: "{{ org }}"
-      username: "{{ lookup('env','VMWARE_USER')     }}"
-      password: "{{ lookup('env','VMWARE_PASSWORD') }}"
-      host: "{{ lookup('env','VMWARE_HOST')     }}"
-      api_version: '5.6'
+  roles: 
+    - vcloud
+
+- hosts: "{{vm_name}}"
+  roles: 
+    - "{{ansible_os_family}}}"
+    - "{{tag_1_role}}"
