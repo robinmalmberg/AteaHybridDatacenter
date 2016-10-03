@@ -16,7 +16,10 @@
     password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     host: "{{ lookup('env','VMWARE_HOST')     }}"
     api_version: '5.6'
-  with_sequence: start=1 end="{{options_1_number_of_vms}}" stride=1
+  with_sequence: 
+    start: 1
+    end: "{{options_1_number_of_vms}}"
+    stride: 1
   register: VM
   retries: 10
   delay: 30
