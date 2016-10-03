@@ -7,10 +7,10 @@
     vm_memory: "{{option_1_vm_memory}}"
     network_name: "{{options_1_vlan}}"
     state: deployed
-    template_name: "{{template_name}}" #'Template-CentOS6.8-x64'
-    catalog_name: AOS-global01
+    template_name: "{{template_name}}"
+    catalog_name: "{{catalog_name}}"
     service_type: vcd
-    vdc_name: 'OvDC-AteaStockholm6'
+    vdc_name: "{{vdc_name}}"
     org: "{{ org }}"
     username: "{{ lookup('env','VMWARE_USER')     }}"
     password: "{{ lookup('env','VMWARE_PASSWORD') }}"
