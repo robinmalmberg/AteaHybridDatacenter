@@ -6,6 +6,7 @@
     vm_cpus: "{{vm_cpus}}"
     vm_memory: "{{vm_memory}}"
     network_name: "{{network_name}}"
+    network_mode: "pool"
     state: deployed
     template_name: "{{template_name}}"
     catalog_name: "{{catalog_name}}"
@@ -17,6 +18,25 @@
     host: "{{ lookup('env','VMWARE_HOST')     }}"
     api_version: '5.6'
   with_sequence: "start=1 end={{number_of_vms}}"
+
+- name: Get vCloud vApp
+  vca_vapp:
+    vapp_name: "{{vm_name}}"
+    vm_name: "{{vm_name}}"
+    vm_cpus: "{{vm_cpus}}"
+    vm_memory: "{{vm_memory}}"
+    network_name: "{{network_name}}"
+    network_mode: "pool"
+    state: deployed
+    template_name: "{{template_name}}"
+    catalog_name: "{{catalog_name}}"
+    service_type: vcd
+    vdc_name: "{{vdc_name}}"
+    org: "{{ org }}"
+    username: "{{ lookup('env','VMWARE_USER')     }}"
+    password: "{{ lookup('env','VMWARE_PASSWORD') }}"
+    host: "{{ lookup('env','VMWARE_HOST')     }}"
+    api_version: '5.6'
   register: VM
   retries: 10
   delay: 30
