@@ -18,6 +18,8 @@
     host: "{{ lookup('env','VMWARE_HOST')     }}"
     api_version: '5.6'
   with_sequence: "start=1 end={{number_of_vms}}"
+  register: VMM
+- debug: var=VMM
 
 - name: Get vCloud vApp
   vca_vapp:
